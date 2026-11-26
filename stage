@@ -1,0 +1,12 @@
+4. Próximo desafio — Evolução profissional
+
+
+Transforme sua aplicação em um pequeno sistema que:
+1. Receba o nome do funcionário.
+2. Receba o salário.
+3. Receba o tempo de empresa.
+4. Não permita salário igual ou inferior a zero.
+5. Não permita tempo de empresa negativo.
+6. Calcule o reajuste.
+7. Exiba o salário final com duas casas decimais.
+Novo conceito: validação de dados.
