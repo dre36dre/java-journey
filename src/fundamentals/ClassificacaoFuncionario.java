@@ -45,13 +45,25 @@ public class ClassificacaoFuncionario {
 		public static int readTime(Scanner input) {
 		 int time;
 		do {
-			System.out.println("Length of service:");
+			System.out.println("Length of service: ");
 			time=input.nextInt();
 		} while (time<=0);
 			return time;
 		}
 		
 		
+		public static double calculateBonus(double salary, int years) {
+			if(years>=5) {
+				return salary *0.10;
+			}
+		return salary * 0.20;
+		}
+		
+		
+		
+		public static double calculteTax(double salary) {
+			return salary *0.10;
+		}
 
 		public static double calculeNewSalary(double salary, int time) {
 		
@@ -66,6 +78,14 @@ public class ClassificacaoFuncionario {
 		}
 		
 	}
+		
+		public static double calculeFinalSalary(double salary, int years) {
+			double newSalary=calculeNewSalary(salary, years);
+			double bonus=calculateBonus(newSalary, years);
+			double tax=calculteTax(newSalary);
+			return newSalary+bonus-tax;
+		
+		}
 		
 			
 		
