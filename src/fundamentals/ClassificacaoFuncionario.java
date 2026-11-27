@@ -12,9 +12,9 @@ public class ClassificacaoFuncionario {
 		double salary= readSalary(input);
 		int time=readTime(input);	
 		
-		double newSalary=calculeNewSalary(salary,time);
-		
-		displayResults(name, time, newSalary);
+		double finalSalary = calculeFinalSalary(salary, time);
+		String level=classifyEmployee(time);
+		displayResults(name, time, finalSalary,level);
 		input.close();
 	}
 		public static String readName(Scanner input) {
@@ -87,14 +87,24 @@ public class ClassificacaoFuncionario {
 		
 		}
 		
+		public static String classifyEmployee(int time) {
+			if(time<3) {
+				return "Junior";
+			}
+			else if(time<=4) {
+				return "Pleno";
+			}
+			return "Senior";
+		}
 			
 		
-		public static void displayResults(String name, int time, double newSalary) {
+		public static void displayResults(String name, int time, double newSalary,String level) {
 		
 			System.out.println("\nEmployee information");
 		
 			System.out.printf("Name: "+name);
 			System.out.println("\nLength of service"+time);
+			System.out.println("Seniority: "+ level);
 			System.out.printf("New salary: $= %.2f%n", newSalary);
 		}
 		
